@@ -4,9 +4,9 @@ use this to search for subdomains of a second level domain from a list of 10.000
 check each sub for it's IP, DNS Record && Open Ports.
 this tool uses DNSRECON , NMAP and gives you a simple outpout.
 use -s option to search for a single domain 
-`( ./abbas-agha -s domain.com )`
+##### `( ./abbas-agha -s domain.com )`
 or just run the scripts like this
-`( ./abbas-agha domain.com)` to do the whole thing.
+##### `( ./abbas-agha domain.com)` to do the whole thing.
 make sure you have dnsrecon, nmap, host installed.use these dommands to install them if not.
 ```
 apt update
