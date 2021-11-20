@@ -424,7 +424,7 @@ kb
 " > /tmp/abbas-agha-subs.txt
 
 if [[ $1 = '-s'  ]];then
-        host $2 | grep address | awk '{print $4"\t"$1}'
+        host $2 | grep address | grep -v IPv6 | awk '{print $4"\t"$1}'
         echo -e '\e[32m'  "$2 DNS Records are:"
 	dnsrecon -d $2
 	echo ""
@@ -438,7 +438,7 @@ subs=()
 for i in $(cat /tmp/abbas-agha-subs.txt)
 
 do
-	host $i.$1 | grep address | awk '{print $4"\t"$1}'
+	host $i.$1 | grep address | grep -v IPv6 | awk '{print $4"\t"$1}'
 	subs+=("$(host $i.$1 | grep address | awk '{print$1}')")
 done
 
